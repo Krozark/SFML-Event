@@ -1,4 +1,6 @@
 SFML-Event
 ==========
 
-Some class to manage Envent in SFML
+Some class to manage Event in SFML
+
+
