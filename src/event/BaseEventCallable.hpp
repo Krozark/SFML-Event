@@ -3,7 +3,10 @@
 
 #include <SFML/Window/Event.hpp>
 
-namespace ev
+#include <tuple>
+#include <iostream>
+
+namespace event
 {
 
 // ------------- UTILITY---------------
@@ -29,8 +32,6 @@ struct make_indexes : make_indexes_impl<0, index_tuple<>, Types...>
 {};
 
  // ----------UNPACK TUPLE AND APPLY TO FUNCTION ---------
-#include <tuple>
-#include <iostream>
 
 using namespace std;
 
@@ -96,7 +97,8 @@ Ret apply(Ret (*pf)(Args...), tuple<Args...>&&  tup)
 }
 */
 
-class MainWindow;
+class EventTarget;
+
 
 class BaseEventCallable
 {
@@ -113,7 +115,7 @@ class BaseEventCallable
         bool test();
 
     protected:
-        friend class MainWindow;
+        friend class EventTarget;
         sf::Event event;
 
 };

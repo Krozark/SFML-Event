@@ -3,7 +3,7 @@
 
 #include "BaseEventCallable.hpp"
 
-namespace ev
+namespace event
 {
 
 template<typename ... Args>

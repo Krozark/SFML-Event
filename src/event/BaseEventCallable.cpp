@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-namespace ev
+namespace event
 {
 
 BaseEventCallable::BaseEventCallable(const sf::Event& ev)

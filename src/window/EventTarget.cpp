@@ -1,26 +1,23 @@
-#include <SFML/OpenGL.hpp>
-
-#include "EventRenderTarget.hpp"
+#include "EventTarget.hpp"
 #include "../event/EventManager.hpp"
 
 
 using namespace sf;
 
-namespace ev
+namespace event
 {
 
-    EventRenderTarget::~EventRenderTarget()
+    EventTarget::~EventTarget()
     {
         int size = events.size();
         for (int i=0;i<size;++i)
         delete events[i];
     };
 
-    void EventRenderTarget::doEvents()
+    void EventTarget::doEvents()
     {
 
         Event event; // gestion des évenements
-        elapsedTime =  LoopClock.restart().asMilliseconds();
 
         int size = events.size();
         for (int i=0;i<size;++i)

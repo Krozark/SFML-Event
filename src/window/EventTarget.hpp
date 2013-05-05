@@ -1,16 +1,17 @@
-#ifndef EVENTRENDERTARGET_HPP
-#define EVENTRENDERTARGET_HPP
+#ifndef EVENTTARGET_HPP
+#define EVENTTARGET_HPP
 
-#include <SFML/Graphics.hpp>
 #include "../event/BaseEventCallable.hpp"
 
-namespace ev
+#include <vector>
+
+namespace event
 {
 
-    class EventRenderTarget : public sf::RenderTarget
+    class EventTarget
     {
         public:
-            ~EventRenderTarget();
+            ~EventTarget();
 
             inline void addEvent(BaseEventCallable* ev,bool hold=false)
             {
@@ -21,6 +22,8 @@ namespace ev
             };
 
             void doEvents();
+
+            virtual bool pollEvent(sf::Event &event) = 0;
 
         private:
             std::vector<BaseEventCallable*> momentEvents;
