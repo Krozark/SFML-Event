@@ -23,16 +23,8 @@ EventWindow::EventWindow(const sf::VideoMode mode, const std::string &title,cons
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     //gluPerspective(90.f, 1.f, 1.f, 500.f);
-    //
-    /*addEvent(EventManager::createEventObj(*this,&MainWindow::resizeSlot,sf::Event::Resized));
-
-    addEvent(EventManager::createEventObj<MainWindow,float,float>(*this,&MainWindow::moveView,1.f,0.f,sf::Event::KeyPressed,sf::Keyboard::Right),true);
-    addEvent(EventManager::createEventObj<MainWindow,float,float>(*this,&MainWindow::moveView,-1.f,0.f,sf::Event::KeyPressed,sf::Keyboard::Left),true);
-    addEvent(EventManager::createEventObj<MainWindow,float,float>(*this,&MainWindow::moveView,0.f,1.f,sf::Event::KeyPressed,sf::Keyboard::Down),true);
-    addEvent(EventManager::createEventObj<MainWindow,float,float>(*this,&MainWindow::moveView,0.f,-1.f,sf::Event::KeyPressed,sf::Keyboard::Up),true);
 
     addCloseEvent();
-    elapsedTime=0;*/
 };
 
 void EventWindow::addCloseEvent()
@@ -47,19 +39,6 @@ void EventWindow::resizeSlot(const sf::Event& event)
     view.setSize(event.size.width,event.size.height);
     setView(view);
 };
-
-/*void MainWindow::moveView(float x,float y)
-{
-    sf::View view = getView();
-    view.move(x*elapsedTime,y*elapsedTime);
-    setView(view);
-}; 
-
-void EventWindow::doEvents()
-{
-    elapsedTime =  LoopClock.restart().asMilliseconds();
-    EventManager::doEvents();
-}*/
 
 
 };
